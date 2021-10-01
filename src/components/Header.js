@@ -1,6 +1,7 @@
 import React from 'react';
 import {AppBar, Typography, makeStyles, Toolbar, Button} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles( (theme) => ({
@@ -20,15 +21,11 @@ const useStyles = makeStyles( (theme) => ({
     },
     btn:{
         background: '#fff',
-        width: '18%',
         minWidth: 90,
         marginLeft: 10,
         paddingInline: 10,
         color: theme.palette.secondary.main,
         textTransform: 'none'
-        /* '&:hover': {
-            backgroundColor: '#cfcece' ,
-        }, */
     },
 }));
 
@@ -41,17 +38,15 @@ const Header = () => {
                 <Typography className={classes.text} variant='h4' color='inherit'>
                      Medvision Prueba tecnica
                 </Typography>
-                <Button 
-                    variant="contained" 
-                    startIcon={<AddIcon/>}
-                    className={classes.btn}
-                    /* classes={{
-                        root: classes.btn
-                    }} */
-                        /* onSubmit={() => onSubmit()} */
+                <Link to='add-people'>
+                    <Button 
+                        variant="contained" 
+                        startIcon={<AddIcon/>}
+                        className={classes.btn}
                     > 
-                        Agregar Persona
-                </Button>
+                            Agregar Persona
+                    </Button>
+                </Link>
             </Toolbar>
         </AppBar>
     );

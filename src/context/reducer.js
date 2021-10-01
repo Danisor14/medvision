@@ -1,11 +1,16 @@
-import {} from './types'
+import { LOGIN, GET_PEOPLE } from './types'
 
 export default (state, action) => {
     switch(action.type) {
-        case FORM_PROJECT: 
+        case LOGIN: 
             return {
                 ...state,
-                newProjectForm: true
+                token: action.payload
+            }
+        case GET_PEOPLE:
+            return {
+                ...state,
+                people: action.payload
             }
 
         default:
